@@ -88,21 +88,25 @@ Along with the Environment Variables from the [Base image](https://hub.docker.co
 | `DOCKER_HOST`       | (optional) If using tcp connection e.g. `tcp://111.222.111.32:2376`                     |                              |
 | `DOCKER_CERT_PATH`  | (optional) If using tcp connection with TLS - Certificate location e.g. `/docker-certs` |                              |
 | `DOCKER_TLS_VERIFY` | (optional) If using tcp conneciton to socket Verify TLS                                 | `1`                          |
-| `REFRESH_ENTRIES`   | If record exists, update entry with new values `TRUE` or `FALSE`                        | `TRUE`                       |
 | `SWARM_MODE`        | Enable Docker Swarm Mode `TRUE` or `FALSE`                                              | `FALSE`                      |
 | `CF_EMAIL`          | Email address tied to Cloudflare Account - Leave Blank  for Scoped API                  |                              |
 | `CF_TOKEN`          | API Token for the Domain                                                                |                              |
-| `DEFAULT_TTL`       | TTL to apply to records                                                                 | `1`                          |
 | `TARGET_DOMAIN`     | Destination Host to forward records to e.g. `host.example.com`                          |                              |
+| `DEFAULT_TTL`       | TTL to apply to records                                                                 | `1`                          |
+| `REFRESH_ENTRIES`   | If record exists, update entry with new values `TRUE` or `FALSE`                        | `TRUE`                       |
 | `DOMAIN1`           | Domain 1 you wish to update records for.                                                |                              |
 | `DOMAIN1_ZONE_ID`   | Domain 1 Zone ID from Cloudflare                                                        |                              |
 | `DOMAIN1_PROXIED`   | Domain 1 True or False if proxied                                                       |                              |
 | `DOMAIN1_TARGET_DOMAIN` | (optional specify target_domain for Domain 1, overriding the default value from TARGET_DOMAIN)                                          |                              |
+| `DOMAIN1_TTL` | (optional specify ttl for Domain 1, overriding the default value from DEFAULT_TTL)                                          |                              |
+| `DOMAIN1_REFRESH_ENTRY` | (optional specify whether to update Domain 1 if the record exists, overriding the default value from REFRESH_ENTRIES)                                          |                              |
 | `DOMAIN1_EXCLUDED_SUB_DOMAINS` | (optional specify sub domain trees to be ignored in lables) ex: `DOMAIN1_EXCLUDED_SUB_DOMAINS=int` would not create a CNAME for `*.int.example.com` | |
 | `DOMAIN2`           | (optional Domain 2 you wish to update records for.)                                     |                              |
 | `DOMAIN2_ZONE_ID`   | Domain 2 Zone ID from Cloudflare                                                        |                              |
 | `DOMAIN2_PROXIED`   | Domain 2 True or False if proxied                                                       |                              |
 | `DOMAIN2_TARGET_DOMAIN`   | (optional specify target_domain for Domain 2, overriding the default value from TARGET_DOMAIN)                                     |                              |
+| `DOMAIN2_TTL` | (optional specify ttl for Domain 2, overriding the default value from DEFAULT_TTL)                                          |                              |
+| `DOMAIN2_REFRESH_ENTRY` | (optional specify whether to update Domain 2 if the record exists, overriding the default value from REFRESH_ENTRIES)                                          |                              |
 | `DOMAIN2_EXCLUDED_SUB_DOMAINS` | (optional specify sub domain trees to be ignored in lables) ex: `DOMAIN2_EXCLUDED_SUB_DOMAINS=int` would not create a CNAME for `*.int.example2.com` | |
 | `DOMAIN3....`       | And so on..                                                                             |                              |
 
